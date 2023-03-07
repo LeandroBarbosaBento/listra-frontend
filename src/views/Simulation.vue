@@ -31,12 +31,12 @@
       </div>
   </div>
 
-  <div class="my-container">
+  <div class="my-container cards-info-container">
     <v-row>
-      <v-col cols="3">
+      <v-col cols="12" md="3">
         <CarInfo/>
       </v-col>
-      <v-col>
+      <v-col cols="12" md="9">
         <CarSimulation/>
       </v-col>
     </v-row>
@@ -62,8 +62,6 @@ export default {
 <style scoped>
 
 .car-information {
-  display: grid;
-  grid-template-columns:  1fr 2fr;
   gap: 28px;
 }
 
@@ -71,6 +69,10 @@ export default {
   margin: auto;
   margin-top: 84px;
   width: 95%;
+}
+
+.cards-info-container{
+  width: 93%;
 }
 
 .simulation-title {
