@@ -32,16 +32,55 @@
   </div>
 
   <div class="my-container">
-    <h1>INFORMAÇÕES DO VEÍCULO E PARCELAMENTO</h1>
+    <v-row>
+      <v-col cols="3">
+        <CarInfo/>
+      </v-col>
+      <v-col>
+        <CarSimulation/>
+      </v-col>
+    </v-row>
+
+  </div>
+
+
+
+  <div class="my-container car-information">
+    <div class="item" style="background:red;">
+      <CarInfo/>
+    </div>
+
+
+    <div class="item" style="background:white;">
+      <CarSimulation/>
+    </div>
+
   </div>
 
 
 </template>
 
 <script>
+import CarInfo from '@/components/CarInfo.vue'
+import CarSimulation from '@/components/CarSimulation.vue'
+
+export default {
+  components:{
+    CarInfo,
+    CarSimulation,
+
+  }
+}
 </script>
 
 <style scoped>
+
+.car-information {
+  display: grid;
+  grid-template-columns:  1fr 2fr;
+  gap: 28px;
+}
+
 .my-container {
   margin: auto;
   margin-top: 84px;
