@@ -28,13 +28,13 @@
 
     <v-app-bar
       color="#7D28F7"
-
+      :elevation="0"
     >
       <v-app-bar-nav-icon color="white" @click="drawer = !drawer"></v-app-bar-nav-icon>
 
       <div class="d-flex justify-center align-center w-100">
         <v-img
-          height="37"
+          height="45"
           :src="ListrasLogo"
         ></v-img>
       </div>
@@ -61,6 +61,6 @@ import ListrasLogo from '@/assets/img/LISTRA_branco_verde.png';
 </script>
 <style scoped>
 .main-class{
-  background-color: #F5F5F5;
+  background-color: #EBEEF2;
 }
 </style>

@@ -1,10 +1,10 @@
 <template>
 
-  <div class="simulation-container">
+  <div class="my-container">
 
       <h1 class="row simulation-title">Simulação de Financiamento</h1>
 
-      <v-container class="simulation-box">
+      <div class="simulation-box">
         <v-row>
           <h2 class="simulation-description">Selecione um veículo que deseja simular o financiamento</h2>
         </v-row>
@@ -14,6 +14,7 @@
             bg-color="white"
             label="Selecione"
             variant="outlined"
+            density="comfortable"
             hide-details
             :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
           ></v-select>
@@ -27,7 +28,11 @@
           </v-btn>
         </v-row>
 
-      </v-container>
+      </div>
+  </div>
+
+  <div class="my-container">
+    <h1>INFORMAÇÕES DO VEÍCULO E PARCELAMENTO</h1>
   </div>
 
 
@@ -37,22 +42,56 @@
 </script>
 
 <style scoped>
-.simulation-container {
+.my-container {
   margin: auto;
   margin-top: 84px;
-  border: 1px solid red;
   width: 95%;
+}
+
+.simulation-title {
+  font-family: Roboto;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 38px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #444444;
+  height: 38px;
+  position: relative;
+}
+
+.simulation-title::before {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 3px;
+    background: #7D28F7;
+    position: absolute;
+    top: 50px;
+    left: 0px;
 }
 
 .simulation-box{
   background: white;
-  padding: 35px;
+  padding: 45px;
+  margin: 0 auto;
+  margin-top: 42px;
+  width: 98%;
+}
+
+.simulation-description {
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #444444;
 }
 
 .select-line{
-  width: 70%;
-  padding: 10px;
-  gap: 50px;
+  width: 45%;
+  padding-top: 16px;
+  gap: 25px;
 }
 v-select{
   border: 2px solid red;
