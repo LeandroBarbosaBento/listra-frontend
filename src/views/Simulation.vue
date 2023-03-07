@@ -44,20 +44,6 @@
   </div>
 
 
-
-  <div class="my-container car-information">
-    <div class="item" style="background:red;">
-      <CarInfo/>
-    </div>
-
-
-    <div class="item" style="background:white;">
-      <CarSimulation/>
-    </div>
-
-  </div>
-
-
 </template>
 
 <script>
