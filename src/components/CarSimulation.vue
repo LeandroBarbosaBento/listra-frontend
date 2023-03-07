@@ -49,6 +49,23 @@
                 </v-card>
               </v-col>
             </v-row>
+
+            <v-row>
+              <v-col class="contact-card" cols="12" md="12">
+                <v-btn
+                  rounded="pill"
+                  color="#1ABB59"
+                  height="40"
+                  min-width="257"
+                  class="align-self-center"
+                  prepend-icon="mdi-whatsapp"
+                >
+                  <span class="button-text">Falar com consultor</span>
+                </v-btn>
+
+                <span class="contact-number">(31) 3441-0240</span>
+              </v-col>
+            </v-row>
           </div>
         </v-col>
 
@@ -59,8 +76,9 @@
 
     </div>
 
-
   </div>
+
+  <h1>Teste</h1>
 </template>
 
 <script>
@@ -148,12 +166,36 @@ export default {
 }
 
 .card-tag span {
-
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
   line-height: 14px;
   color: #FFFFFF;
+}
+
+.contact-card {
+  color: white;
+}
+.contact-number{
+  margin-left: 16px;
+  color: #444444;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+
+}
+
+.button-text{
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 900;
+  line-height: 19px;
+  letter-spacing: 0em;
+  text-align: center;
+
 }
 </style>
