@@ -143,4 +143,42 @@ v-select{
   color: #FFFFFF;
   text-transform: none;
 }
+
+@media only screen and (max-width: 800px) {
+  .my-container {
+    margin-top: 74px;
+  }
+
+  .simulation-box {
+    margin-top: 15px;
+    width: 100%;
+  }
+
+  .select-line{
+    width: 100%;
+    padding-top: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .select-class {
+    width: 100%;
+  }
+  
+  .simulation-title{
+    font-size: 18px;
+    line-height: 21px;
+    text-align: left;
+    height: 21px;
+
+  }
+  .simulation-title::before{
+    display: none;
+  }
+
+  .cards-info-container{
+    margin-top: 15px !important;
+  }
+}
 </style>

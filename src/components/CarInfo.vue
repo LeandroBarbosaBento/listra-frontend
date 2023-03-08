@@ -1,6 +1,6 @@
 <template>
 <v-card
-  class="mx-auto font-roboto"
+  class="mx-auto font-roboto my-height"
 >
   <v-img
     cover
@@ -90,6 +90,9 @@ export default {
 </script>
 
 <style>
+.my-height {
+  height: 375px;
+}
 .font-roboto {
   font-family: Roboto;
   color: #444444 !important;
