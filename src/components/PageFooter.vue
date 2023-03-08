@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <v-row>
+    <v-row class="contact-links-container">
       <v-col class="company-links">
         <h2>Encontre seu veículo</h2>
         <ul>
@@ -186,5 +186,33 @@ export default {
   color: white;
   text-decoration: none;
   font-size: 12px;
+}
+
+@media only screen and (max-width: 800px) {
+  /* FOOTER */
+  .company-links {
+    display: none;
+  }
+
+  .footer {
+    height: 252px;
+    display: flex;
+    align-items: center;
+  }
+
+  .footer .contact-links-container {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .client {
+    justify-content: center;
+    margin: auto;
+  }
+  .client .v-row {
+    justify-content: center;
+  }
 }
 </style>
