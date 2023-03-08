@@ -43,17 +43,23 @@
 
   </div>
 
+  <PageFooter />
+
+
 
 </template>
 
 <script>
 import CarInfo from '@/components/CarInfo.vue'
 import CarSimulation from '@/components/CarSimulation.vue'
+import PageFooter from '@/components/PageFooter.vue'
+
 
 export default {
   components:{
     CarInfo,
     CarSimulation,
+    PageFooter,
 
   }
 }
