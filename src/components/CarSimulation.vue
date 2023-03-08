@@ -197,4 +197,62 @@ export default {
   text-align: center;
 
 }
+
+@media only screen and (max-width: 800px) {
+
+  .container-simulation{
+    background-color: white;
+    padding: 10px;
+    padding-top: 37px;
+    border-radius: 4px;
+    box-shadow: 0px 3px 1px -2px var(--v-shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)), 0px 2px 2px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)), 0px 1px 5px 0px var(--v-shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12))
+  }
+
+  .my-title {
+    display: none;
+  }
+
+  .card-group {
+    padding: 0;
+    gap: 0;
+  }
+
+  .card-group .v-row{
+    width: 100%;
+    margin: 0 !important;
+    padding: 0;
+  }
+
+  .card-group .v-row .v-col-12 {
+    padding: 0;
+  }
+
+  .my-card {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .card-tag {
+    left: 70.21%;
+    right: 0%;
+    top: 29.21%;
+    bottom: 43.82%;
+  }
+
+  .contact-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 18px;
+    margin-bottom: 32px;
+  }
+
+  .contact-number {
+    margin: 0;
+    text-align: center;
+  }
+
+
+}
 </style>

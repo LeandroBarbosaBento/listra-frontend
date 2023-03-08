@@ -198,6 +198,7 @@ export default {
     height: 252px;
     display: flex;
     align-items: center;
+    margin-top: 37px;
   }
 
   .footer .contact-links-container {
