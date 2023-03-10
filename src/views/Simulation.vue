@@ -52,7 +52,7 @@
         <CarInfo :car="carSelectedInfo" />
       </v-col>
       <v-col cols="12" md="9">
-        <CarSimulation/>
+        <CarSimulation :simulation="simulation"/>
       </v-col>
     </v-row>
 
@@ -68,8 +68,6 @@
   elevation="24"
 >
   <div class="text-subtitle-1 pb-2">O valor da entrada deve ser menor que o valor total do veículo</div>
-
-
   <template v-slot:actions>
     <v-btn
       color="white"
@@ -115,8 +113,12 @@ export default {
         "telefone": "-",
         "valor": 0
       },
-      snackbar: true,
+      snackbar: false,
       entrada: 0,
+      simulation: {
+        valor: 0,
+        entrada: 0,
+      }
   }),
   created(){
     api.get('/car').then(response => {
@@ -140,8 +142,15 @@ export default {
   },
   methods: {
     simulate(){
-      if(this.carSelectedInfo.valor < this.entrada)
+      if(this.carSelectedInfo.valor < this.entrada){
         this.snackbar = true
+        this.entrada = 0
+      }
+      else
+        this.simulation = {
+          valor: this.carSelectedInfo.valor,
+          entrada: this.entrada,
+        }
     }
   }
 }

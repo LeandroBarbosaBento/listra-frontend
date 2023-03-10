@@ -17,7 +17,7 @@
                     6x
                   </div>
                   <div class="card-value">
-                    R$ 9.917
+                    {{ seisVezes }}
                   </div>
 
                   <div class="card-tag">
@@ -34,7 +34,7 @@
                     12x
                   </div>
                   <div class="card-value">
-                    R$ 9.917
+                    {{ dozeVezes }}
                   </div>
                 </v-card>
               </v-col>
@@ -44,7 +44,7 @@
                     48x
                   </div>
                   <div class="card-value">
-                    R$ 9.917
+                    {{ quarentaOitoVezes }}
                   </div>
                 </v-card>
               </v-col>
@@ -70,10 +70,6 @@
         </v-col>
 
       </v-row>
-
-
-
-
     </div>
 
   </div>
@@ -82,7 +78,30 @@
 
 <script>
 export default {
+  props: ['simulation'],
+  data: () => ({
 
+  }),
+  computed: {
+    seisVezes() {
+      let value;
+      value = ( this.simulation.valor + this.simulation.valor * 0.1247 - this.simulation.entrada ) / 6
+
+      return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+    },
+    dozeVezes() {
+      let value;
+      value = ( this.simulation.valor + this.simulation.valor * 0.1556 - this.simulation.entrada ) / 12
+
+      return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+    },
+    quarentaOitoVezes() {
+      let value;
+      value = ( this.simulation.valor + this.simulation.valor * 0.1869 - this.simulation.entrada ) / 48
+
+      return value.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+    }
+  }
 }
 </script>
 
