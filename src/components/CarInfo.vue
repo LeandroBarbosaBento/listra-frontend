@@ -5,7 +5,7 @@
   <v-img
     cover
     height="191"
-    src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+    :src="car.foto"
   >
   <div class="img-tag d-flex align-center">
     <v-icon
@@ -17,17 +17,17 @@
 
     </v-icon>
 
-    Belo Horizonte
+    {{car.cidade}}
 
   </div>
 
   </v-img>
 
   <v-card-item>
-    <v-card-title>Nome do Carro</v-card-title>
+    <v-card-title>{{car.modelo}}</v-card-title>
 
     <v-card-subtitle>
-      <span class="me-1">1.0 200 TSI Total Flex Comfortline</span>
+      <span class="me-1">{{car.descricao}}</span>
     </v-card-subtitle>
   </v-card-item>
 
@@ -42,7 +42,7 @@
           </svg>
         </v-icon>
 
-        2020
+        {{car.ano}}
       </div>
 
       <div class="col">
@@ -54,7 +54,7 @@
           </svg>
         </v-icon>
 
-        15.850 Km
+        {{car.quilometragem}} Km
       </div>
 
       <div class="col">
@@ -67,12 +67,19 @@
           </svg>
         </v-icon>
 
-        Automático
+        {{car.cambio}}
       </div>
     </div>
   </v-card-text>
 
-  <v-card-title>R$ 59.500</v-card-title>
+  <v-card-title>
+    {{
+      car.valor.toLocaleString(
+        'pt-BR',
+        { style: 'currency', currency: 'BRL' }
+      )
+    }}
+  </v-card-title>
 
 </v-card>
 
@@ -83,6 +90,7 @@
 
 
 export default {
+  props: ['car'],
   data: () => ({
 
   }),

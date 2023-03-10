@@ -16,13 +16,28 @@
             variant="outlined"
             density="comfortable"
             hide-details
-            :items="['California', 'Colorado', 'Florida', 'Georgia', 'Texas', 'Wyoming']"
+            item-title="modelo"
+            item-value="index"
+            :items="carNames"
+            v-model="carSelected"
           ></v-select>
+
+          <v-text-field
+            label="Qual o valor da entrada?"
+            variant="outlined"
+            density="comfortable"
+            class="select-class align-self-center"
+            hide-details
+            v-model="entrada"
+          >
+          </v-text-field>
+
 
           <v-btn
             rounded="pill"
             color="#7D28F7"
             class="simulation-button align-self-center"
+            @click="simulate"
           >
             <span>Simular</span>
           </v-btn>
@@ -34,7 +49,7 @@
   <div class="my-container cards-info-container">
     <v-row>
       <v-col cols="12" md="3">
-        <CarInfo/>
+        <CarInfo :car="carSelectedInfo" />
       </v-col>
       <v-col cols="12" md="9">
         <CarSimulation/>
@@ -46,6 +61,25 @@
   <PageFooter />
 
 
+<v-snackbar
+  v-model="snackbar"
+  vertical
+  color="deep-purple-accent-4"
+  elevation="24"
+>
+  <div class="text-subtitle-1 pb-2">O valor da entrada deve ser menor que o valor total do veículo</div>
+
+
+  <template v-slot:actions>
+    <v-btn
+      color="white"
+      variant="text"
+      @click="snackbar = false"
+    >
+      Fechar
+    </v-btn>
+  </template>
+</v-snackbar>
 
 </template>
 
@@ -62,11 +96,53 @@ export default {
     CarSimulation,
     PageFooter,
   },
+  data: () => ({
+      cars: [],
+      carNames: [],
+      carSelected: null,
+      carSelectedInfo: {
+        "id": 0,
+        "created_at": "0000-00-00T00:00:00.000000Z",
+        "updated_at": "0000-00-00T00:00:00.000000Z",
+        "foto": "https://via.placeholder.com/400x400.png/007722?text=Nenhum+Veículo+Selecionado",
+        "cidade": "-",
+        "marca": "-",
+        "modelo": "-",
+        "descricao": "Nenhum veículo selecionado",
+        "ano": 0,
+        "quilometragem": 0,
+        "cambio": "-",
+        "telefone": "-",
+        "valor": 0
+      },
+      snackbar: true,
+      entrada: 0,
+  }),
   created(){
     api.get('/car').then(response => {
       console.log("teste de uso da API: ");
       console.log(response.data)
+
+      this.cars = response.data.data;
+      this.carNames = response.data.data.map((item, index) => {
+        return {
+          'index': index,
+          'modelo': item.modelo
+        }
+      })
+
     })
+  },
+  watch: {
+    carSelected(carIndex) {
+      this.carSelectedInfo = this.cars[carIndex]
+    }
+  },
+  methods: {
+    simulate(){
+      if(this.carSelectedInfo.valor < this.entrada)
+        this.snackbar = true
+    }
   }
 }
 </script>
@@ -128,7 +204,7 @@ export default {
 }
 
 .select-line{
-  width: 45%;
+  width: 80%;
   padding-top: 16px;
   gap: 25px;
 }
