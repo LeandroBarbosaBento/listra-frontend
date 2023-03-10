@@ -122,8 +122,6 @@ export default {
   }),
   created(){
     api.get('/car').then(response => {
-      console.log("teste de uso da API: ");
-      console.log(response.data)
 
       this.cars = response.data.data;
       this.carNames = response.data.data.map((item, index) => {
@@ -216,9 +214,6 @@ export default {
   width: 80%;
   padding-top: 16px;
   gap: 25px;
-}
-v-select{
-  border: 2px solid red;
 }
 .simulation-button{
   width: 180px;
