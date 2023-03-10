@@ -50,6 +50,7 @@
 </template>
 
 <script>
+import api from '@/api'
 import CarInfo from '@/components/CarInfo.vue'
 import CarSimulation from '@/components/CarSimulation.vue'
 import PageFooter from '@/components/PageFooter.vue'
@@ -60,7 +61,12 @@ export default {
     CarInfo,
     CarSimulation,
     PageFooter,
-
+  },
+  created(){
+    api.get('/car').then(response => {
+      console.log("teste de uso da API: ");
+      console.log(response.data)
+    })
   }
 }
 </script>
@@ -165,7 +171,7 @@ v-select{
   .select-class {
     width: 100%;
   }
-  
+
   .simulation-title{
     font-size: 18px;
     line-height: 21px;
