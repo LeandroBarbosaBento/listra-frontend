@@ -1,57 +1,23 @@
-# base
+# Listra - Frontend
 
-## Project setup
+Este projeto é uma página para simulação de financiamento de veículos. 
 
-```
-# yarn
-yarn
+## Rodando o projeto
 
-# npm
-npm install
+Rodar os comandos abaixo no terminal, na pasta raiz do projeto. 
 
-# pnpm
-pnpm install
-```
+Para instalar as dependências do projeto:
 
-### Compiles and hot-reloads for development
-
-```
-# yarn
-yarn dev
-
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
+```bash
+yarn install
 ```
 
-### Compiles and minifies for production
-
+Para iniciar o servidor local: 
+```bash
+yarn run dev
 ```
-# yarn
-yarn build
-
-# npm
-npm run build
-
-# pnpm
-pnpm build
-```
-
-### Lints and fixes files
-
-```
-# yarn
-yarn lint
-
-# npm
-npm run lint
-
-# pnpm
-pnpm lint
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://vitejs.dev/config/).
+## Observações
+* Foi utilizado o Vuetify para personalização
+* Foi utilizado o Axios para as requisições feitas para a API
+* ___IMPORTANTE:___ No arquivo *src/api/index.js* basta alterar o valor da variável *baseURL* (na linha 4) para a URL da API para o sistema funcionar corretamente. 
+* Foi configurado o layout para telas grandes e para telas menores. Não foi feita nenhum tipo de otimização para telas de tamanho médio. 
